@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ariavell.studio/sitemap.xml
+Sitemap: https://tahmid-chy-theta.vercel.app/sitemap.xml

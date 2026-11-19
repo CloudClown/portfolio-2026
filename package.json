@@ -1,9 +1,9 @@
 {
-  "name": "aria-vell-portfolio",
+  "name": "portfolio-2026",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "A surreal, scroll-driven 3D dreamworld portfolio.",
+  "description": "Retro computing portfolio of Tahmid, Frontend Developer — a CRT workshop that compiles itself as you scroll. Professional overplanner. Ships anyway.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
