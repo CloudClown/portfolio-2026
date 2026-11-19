@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #0a0a0b;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #e8e6e1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+  }
+  /* CRT scanlines + vignette */
+  body::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px,
+      transparent 1px, transparent 4px
+    );
+    pointer-events: none;
+  }
+  .vignette {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%);
+    pointer-events: none;
+  }
+  .hazard {
+    height: 18px;
+    background: repeating-linear-gradient(
+      -45deg,
+      #ffd400 0 16px, #0a0a0b 16px 32px
+    );
+  }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .crt { font-family: 'VT323', monospace; }
+
+  .header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 22px 48px 0;
+    font-size: 15px; letter-spacing: 2px; color: #8a8a80;
+  }
+  .header .dot {
+    width: 10px; height: 10px; background: #ffd400;
+  }
+  .header .right { margin-left: auto; color: #6b6b62; }
+
+  .main { padding: 0 48px; }
+  .bootline { font-size: 17px; letter-spacing: 2.5px; color: #b7b5ac; margin-bottom: 14px; }
+  .ok { color: #ffd400; font-weight: 600; }
+
+  .name-chip {
+    display: inline-block;
+    background: #ffd400; color: #0a0a0b;
+    font-size: 17px; font-weight: 700; letter-spacing: 3px;
+    padding: 7px 16px;
+    margin-bottom: 10px;
+  }
+  .title {
+    font-size: 74px; font-weight: 700; line-height: 1.04;
+    letter-spacing: -1px; color: #f2f0ea;
+    text-shadow: 0 0 24px rgba(255, 212, 0, 0.12);
+  }
+  .title .accent { color: #ffd400; }
+
+  .stats {
+    display: flex; gap: 56px; margin-top: 34px;
+  }
+  .stat .num { font-family: 'VT323', monospace; font-size: 52px; color: #ffd400; line-height: 1; }
+  .stat .label { font-size: 12.5px; letter-spacing: 2.5px; color: #8a8a80; margin-top: 6px; }
+
+  .footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px 22px;
+    font-size: 15px; letter-spacing: 2.5px;
+  }
+  .footer .left { color: #6b6b62; }
+  .footer .success { color: #ffd400; font-weight: 600; }
+  .bar {
+    height: 8px; background: #1c1c1e; margin: 0 48px 18px; position: relative;
+  }
+  .bar .fill {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 99%;
+    background: #ffd400;
+    box-shadow: 0 0 18px rgba(255, 212, 0, 0.5);
+  }
+</style>
+</head>
+<body>
+  <div class="hazard"></div>
+  <div class="header mono">
+    <span class="dot"></span>
+    <span>T-99 PHOSPHOR BIOS v3.70 — TAHMICRO SYSTEMS</span>
+    <span class="right">BOOT DEVICE: /DEV/DESK0</span>
+  </div>
+
+  <div class="main">
+    <div class="bootline">DETECTING WORKSHOP ..... <span class="ok">OK</span> &nbsp;&nbsp; MEMORY ..... 640K <span class="ok">OK</span> &nbsp;&nbsp; CABLES ..... <span class="ok">9 UNLABELED</span></div>
+    <div><span class="name-chip">TAHMID — FRONTEND DEVELOPER</span></div>
+    <div class="title">Professional overplanner.<br>Ships <span class="accent">anyway.</span></div>
+    <div class="stats">
+      <div class="stat"><div class="num">3+</div><div class="label">YEARS PRODUCTION</div></div>
+      <div class="stat"><div class="num">05</div><div class="label">PROJECTS LIVE</div></div>
+      <div class="stat"><div class="num">47</div><div class="label">TABS OPEN</div></div>
+      <div class="stat"><div class="num">0</div><div class="label">RUNTIME EXCUSES</div></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="footer mono">
+      <span class="left">STATUS: READY TO SHIP // HIRING AVAILABLE</span>
+      <span class="success">BUILD SUCCESSFUL</span>
+    </div>
+    <div class="bar"><div class="fill"></div></div>
+    <div class="hazard"></div>
+  </div>
+  <div class="vignette"></div>
+</body>
+</html>
