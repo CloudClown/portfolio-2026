@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --base: #0A0A0B;
+    --graphite: #141416;
+    --clay: #1E1E22;
+    --bone: #EDEDEA;
+    --ash: #86868B;
+    --caution: #FFD400;
+    --hairline: rgba(237, 237, 234, 0.12);
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    background: var(--base);
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-base font-sans text-bone antialiased;
+    margin: 0;
+    overflow-x: hidden;
+    font-size: 14px;
+    line-height: 1.7;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #FFD400;
+    color: #0A0A0B;
+  }
+
+  /* VT323 reads ~15% smaller than mono at the same px: bump it globally. */
+  .font-screen {
+    font-family: 'VT323', 'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid #FFD400;
+    outline-offset: 3px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    body[data-custom-cursor='true'],
+    body[data-custom-cursor='true'] * {
+      cursor: none;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .u-shell {
+    width: 100%;
+    max-width: 1340px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @screen sm {
+    .u-shell {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  @screen xl {
+    .u-shell {
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+    }
+  }
+
+  /* Hazard Caution Tape Pattern */
+  .hazard-tape {
+    background: repeating-linear-gradient(
+      -45deg,
+      #FFD400,
+      #FFD400 12px,
+      #0A0A0B 12px,
+      #0A0A0B 24px
+    );
+  }
+
+  .hazard-tape-sm {
+    background: repeating-linear-gradient(
+      -45deg,
+      #FFD400,
+      #FFD400 6px,
+      #0A0A0B 6px,
+      #0A0A0B 12px
+    );
+  }
+
+  /* CRT scanline mask for DOM screens (loader, terminal, boot modals).
+     Deliberately fine and faint — never reduces legibility. */
+  .crt-scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.14) 0px,
+      rgba(0, 0, 0, 0.14) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  }
+
+  /* Full-page phosphor grade: sits above the WebGL canvas, below content. */
+  .crt-page-grade {
+    background:
+      radial-gradient(ellipse 140% 110% at 50% 45%, transparent 62%, rgba(0, 0, 0, 0.42) 100%),
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.09) 0px,
+        rgba(0, 0, 0, 0.09) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+  }
+
+  /* Terminal window backing (matches the 3D CRT glass) */
+  .crt-window {
+    background: #060607;
+    box-shadow:
+      inset 0 0 42px rgba(255, 212, 0, 0.05),
+      0 18px 50px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Workshop Matte Card Backing */
+  .card-workshop {
+    background: rgba(20, 20, 22, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .card-workshop-hover {
+    transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card-workshop-hover:hover {
+    border-color: rgba(255, 212, 0, 0.45);
+    transform: translateY(-2px);
+  }
+
+  /* TODO Tape Tag */
+  .todo-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.15rem 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: #FFD400;
+    color: #0A0A0B;
+    transform: rotate(-1deg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Status Chips */
+  .chip-shipped {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: #FFD400;
+    color: #0A0A0B;
+  }
+
+  .chip-cooking {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px dashed rgba(255, 212, 0, 0.6);
+    color: #FFD400;
+    background: rgba(255, 212, 0, 0.06);
+  }
+
+  /* Wireframe Draft Box */
+  .wireframe-box {
+    border: 1px dashed rgba(237, 237, 234, 0.2);
+    background: rgba(20, 20, 22, 0.3);
+  }
+
+  /* Crosshair Blueprint Marks */
+  .crosshair-corner {
+    position: relative;
+  }
+  .crosshair-corner::before {
+    content: '+';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(255, 212, 0, 0.5);
+    line-height: 1;
+  }
+  .crosshair-corner::after {
+    content: '+';
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(255, 212, 0, 0.5);
+    line-height: 1;
+  }
+}
+
+/* Lenis Recommended CSS */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
