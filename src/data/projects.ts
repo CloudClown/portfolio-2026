@@ -66,10 +66,10 @@ export const projects: Project[] = [
     ],
     stack: ['Next.js 14', 'TypeScript', 'TanStack Query', 'Tailwind CSS', 'WebSockets'],
     liveUrl: 'https://sortedrack.example.com',
-    githubUrl: 'https://github.com/tahmid/sortedrack',
+    githubUrl: 'https://github.com/CloudClown/sortedrack',
     links: [
       { label: 'Live Application', href: 'https://sortedrack.example.com' },
-      { label: 'GitHub Repository', href: 'https://github.com/tahmid/sortedrack' },
+      { label: 'GitHub Repository', href: 'https://github.com/CloudClown/sortedrack' },
     ],
   },
   {
@@ -94,10 +94,10 @@ export const projects: Project[] = [
     ],
     stack: ['React 18', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
     liveUrl: 'https://library.example.com',
-    githubUrl: 'https://github.com/tahmid/library-management',
+    githubUrl: 'https://github.com/CloudClown/library-management',
     links: [
       { label: 'Live Application', href: 'https://library.example.com' },
-      { label: 'GitHub Repository', href: 'https://github.com/tahmid/library-management' },
+      { label: 'GitHub Repository', href: 'https://github.com/CloudClown/library-management' },
     ],
   },
   {
@@ -122,10 +122,10 @@ export const projects: Project[] = [
     ],
     stack: ['React', 'TypeScript', 'Lightweight Charts', 'WebSockets', 'Tailwind CSS'],
     liveUrl: 'https://opec-analytics.example.com',
-    githubUrl: 'https://github.com/tahmid/opec-terminal',
+    githubUrl: 'https://github.com/CloudClown/opec-terminal',
     links: [
       { label: 'Live Application', href: 'https://opec-analytics.example.com' },
-      { label: 'GitHub Repository', href: 'https://github.com/tahmid/opec-terminal' },
+      { label: 'GitHub Repository', href: 'https://github.com/CloudClown/opec-terminal' },
     ],
   },
   {
@@ -150,10 +150,10 @@ export const projects: Project[] = [
     ],
     stack: ['Next.js', 'React', 'Tailwind CSS', 'Stripe API', 'Server Actions'],
     liveUrl: 'https://poolheaven.example.com',
-    githubUrl: 'https://github.com/tahmid/pool-heaven',
+    githubUrl: 'https://github.com/CloudClown/pool-heaven',
     links: [
       { label: 'Live Application', href: 'https://poolheaven.example.com' },
-      { label: 'GitHub Repository', href: 'https://github.com/tahmid/pool-heaven' },
+      { label: 'GitHub Repository', href: 'https://github.com/CloudClown/pool-heaven' },
     ],
   },
   {
@@ -178,10 +178,10 @@ export const projects: Project[] = [
     ],
     stack: ['Next.js 15', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Zustand'],
     liveUrl: 'https://event-suite.example.com',
-    githubUrl: 'https://github.com/tahmid/event-management',
+    githubUrl: 'https://github.com/CloudClown/event-management',
     links: [
       { label: 'Preview Build', href: 'https://event-suite.example.com' },
-      { label: 'GitHub Repository', href: 'https://github.com/tahmid/event-management' },
+      { label: 'GitHub Repository', href: 'https://github.com/CloudClown/event-management' },
     ],
   },
 ]
