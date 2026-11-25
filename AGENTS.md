@@ -216,10 +216,10 @@ QA script prerequisites: Chrome at `C:/Program Files/Google/Chrome/Application/c
 - [x] New OG/Twitter preview card (T-99 BIOS style, 1200×630) at `public/og.png`; image URLs versioned `?v=2`
 - [x] New favicon set: T-99 "99 + progress bar" SVG, 32×32 PNG, 180×180 apple-touch-icon, wired in `index.html`
 - [x] Clean production build and clean typecheck
+- [x] Real contact links wired from `src/data/site.ts`: email `tahmid.chy29@gmail.com`, GitHub `github.com/CloudClown`, LinkedIn `in/tahmid-rahman-chowdhury`; project repo URLs moved to `github.com/CloudClown/*`; JSON-LD `Person` gets `email`/`url`/`sameAs`
 
 ### Remaining / open
 - [ ] **Real social-preview refresh on Discord/X** — server-side is correct and verified live; the old card is cached client-side. Action is human: share `…vercel.app/?v=2` (or edit an existing message) to force re-fetch. Nothing to do in Vercel.
-- [ ] **Real GitHub/LinkedIn/email links** — `src/data/site.ts` still has placeholders `https://github.com/` and `https://linkedin.com/`.
 - [ ] **Personal detail placeholder** — `site.personalDetail` is literally `[ONE PERSONAL DETAIL GOES HERE — …]`.
 - [ ] **Real royalty-free tracks (optional)** — the `kind: 'file'` path is implemented but `PLAYLIST` ships only generated presets. Blocked earlier by environment (Pixabay needs an API key; archive.org SSL dropped), not by code. Needs user-provided URLs + attribution.
 - [ ] **Custom domain (optional)** — once owned, update `canonical`, `og:url`, `sitemap.xml`, `robots.txt` in one pass.
